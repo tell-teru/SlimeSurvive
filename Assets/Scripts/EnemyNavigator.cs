@@ -11,13 +11,15 @@ public class EnemyNavigator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");//Playerタグのオジェクトを探して
+        target = player.transform;// player をtargetにした
         agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // target 追いかける
+        // target に向かって追いかける処理
         agent.SetDestination(target.transform.position);
     }
 }
