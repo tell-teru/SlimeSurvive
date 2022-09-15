@@ -25,10 +25,8 @@ public class SlimeCreater : MonoBehaviour
 
     void Create()
     {
-        Debug.Log("aaaaa");
         for (int i = 0; i <= createNum; i++)
         {
-            Debug.Log("bbbbb");
 
             float x = Random.Range(100f, 900f);
             float z = Random.Range(100f, 900f);

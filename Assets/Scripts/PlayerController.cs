@@ -15,4 +15,23 @@ public class PlayerController : MonoBehaviour
     {
         
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Slime")
+        {
+            Debug.Log("接触");
+            Destroy(collision.gameObject);
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(" Hit ");
+        if(other.gameObject.tag == "Slime")
+        {
+            Debug.Log("HIT");
+            Destroy(other.gameObject);
+        }
+    }
 }
