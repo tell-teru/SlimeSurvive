@@ -9,7 +9,9 @@ public class SlimeCreater : MonoBehaviour
 
     //public GameObject normalSlime;
 
-    int createNum = 100;
+    int createNum = 30;
+
+    public float createTime = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,13 @@ public class SlimeCreater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        createTime += Time.deltaTime;
+
+        if (createTime >= 10f)
+        {
+            Create();
+            createTime = 0.0f;
+        }
     }
 
     void Create()
@@ -28,8 +36,8 @@ public class SlimeCreater : MonoBehaviour
         for (int i = 0; i <= createNum; i++)
         {
 
-            float x = Random.Range(100f, 900f);
-            float z = Random.Range(100f, 900f);
+            float x = Random.Range(200f, 500f);
+            float z = Random.Range(200f, 500f);
 
             slimeNumber = Random.Range(0, slimes.Length);
             transform.position = new Vector3(x, 0, z);
