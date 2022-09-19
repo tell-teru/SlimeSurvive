@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
 {
@@ -15,10 +16,16 @@ public class WaveManager : MonoBehaviour
     public int waveCount = 0;
 
 
+    public Text waveText;
+    public Canvas waveCanvas;
+
+
     // Start is called before the first frame update
     void Start()
     {
         WaveSwitch();
+
+        //waveCanvas.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -32,7 +39,7 @@ public class WaveManager : MonoBehaviour
             waveTimer = 0;
         }
 
-        if(waveCount == 2)
+        if(waveCount == 4)
         {
             Clear();
         }
@@ -55,6 +62,7 @@ public class WaveManager : MonoBehaviour
             slimeCreater.gameObject.SetActive(false);
             nowWave = false;
             Debug.Log("WAVE : " + waveCount);
+            waveText.text = "WAVE : " + waveCount;
 
             //waveCount++;
 
@@ -71,6 +79,7 @@ public class WaveManager : MonoBehaviour
             slimeCreater.gameObject.SetActive(true);
             nowWave = true;
             Debug.Log("探索");
+            waveText.text = "SEARCH";
 
             waveCount++;
         }
