@@ -17,7 +17,7 @@ public class WaveManager : MonoBehaviour
 
 
     public Text waveText;
-    public Canvas waveCanvas;
+    public GameObject waveCanvas;
 
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class WaveManager : MonoBehaviour
     {
         WaveSwitch();
 
-        //waveCanvas.gameObject.SetActive(true);
+        waveCanvas.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class WaveManager : MonoBehaviour
             waveTimer = 0;
         }
 
-        if(waveCount == 4)
+        if(waveCount == 4)//waveCount=2 で1WAVE生き残りゲームに　=4で３WAVE生き残りゲームになる
         {
             Clear();
         }
@@ -49,6 +49,8 @@ public class WaveManager : MonoBehaviour
     {
         if (nowWave == true)
         {
+            waveCanvas.gameObject.SetActive(true);
+            StartCoroutine("TextSet");//コルーチンを実行
 
             //GameObject slime = GameObject.FindGameObjectWithTag("Slime");//Playerタグのオジェクトを探して
             var slimClones = GameObject.FindGameObjectsWithTag("Slime");
@@ -89,6 +91,14 @@ public class WaveManager : MonoBehaviour
     {
         Debug.Log("CLEAR");
         SceneManager.LoadScene("Clear");
+    }
+
+
+    //実行内容 1秒待ってからテキスト非表示
+    IEnumerator TextSet()
+    {
+        yield return new WaitForSeconds(1.0f);
+        waveCanvas.gameObject.SetActive(false);
     }
 
 }
