@@ -10,7 +10,6 @@ public class WaveManager : MonoBehaviour
 
     public GameObject slimeCreater;
     public GameObject enemyCreater;
-    public GameObject minSlime;
 
     public bool nowWave = false;
 
@@ -27,7 +26,6 @@ public class WaveManager : MonoBehaviour
         WaveSwitch();
 
         waveCanvas.gameObject.SetActive(false);
-        minSlime.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -54,8 +52,6 @@ public class WaveManager : MonoBehaviour
             waveCanvas.gameObject.SetActive(true);
             StartCoroutine("TextSet");//コルーチンを実行
 
-            minSlime.gameObject.SetActive(true);
-
             //GameObject slime = GameObject.FindGameObjectWithTag("Slime");//Playerタグのオジェクトを探して
             var slimClones = GameObject.FindGameObjectsWithTag("Slime");
             foreach(var clone in slimClones)
@@ -81,7 +77,6 @@ public class WaveManager : MonoBehaviour
                 Destroy(clone);
             }
 
-            minSlime.gameObject.SetActive(false);
             enemyCreater.gameObject.SetActive(false);
             slimeCreater.gameObject.SetActive(true);
             nowWave = true;

@@ -278,6 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 196135203}
   - component: {fileID: 196135202}
+  - component: {fileID: 196135204}
   m_Layer: 0
   m_Name: MinSlimeGenerator
   m_TagString: Untagged
@@ -298,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSlimePre: {fileID: 7579059333461768869, guid: d8ff5b548cd5946e882a6b4d7ec04a82, type: 3}
+  player: {fileID: 1746986590}
 --- !u!4 &196135203
 Transform:
   m_ObjectHideFlags: 0
@@ -306,12 +308,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196135201}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: -0.16949964, z: 3.8706665}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 1.75, z: -2.630005}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1746986591}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &196135204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196135201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d5637bea744490f8e0f9a540345cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!1 &200302113
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +683,7 @@ GameObject:
   - component: {fileID: 522241096}
   m_Layer: 0
   m_Name: Slime_01
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1895,7 +1910,6 @@ MonoBehaviour:
   waveTimer: 0
   slimeCreater: {fileID: 1248042020}
   enemyCreater: {fileID: 749916925}
-  minSlime: {fileID: 0}
   nowWave: 0
   waveCount: 0
   waveText: {fileID: 429223354}

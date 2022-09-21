@@ -22,4 +22,18 @@ public class MinSlimeController : MonoBehaviour
 
         GetComponent<Rigidbody>().AddForce(dir);
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            GameObject ene = GameObject.FindWithTag("Enemy");
+
+            Destroy(ene);
+
+            Debug.Log("敵を倒した");
+
+        }
+    }
 }
