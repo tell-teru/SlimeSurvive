@@ -6,14 +6,18 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 
-    Vector3 slimeScale;  //①仮の変数宣言
+    public Vector3 slimeScale;  //①仮の変数宣言
     Vector3 v0 = new Vector3(0.0f, 0.0f, 0.0f);
+    Vector3 v3 = new Vector3(0.3f, 0.3f, 0.3f);
 
     public GameObject gameOverText;
     public bool gameOver;
 
     private int playerHp = 0;
 
+    public GameObject warning;
+
+    WaveManager isWave;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,10 @@ public class PlayerController : MonoBehaviour
 
         gameOverText.gameObject.SetActive(false);
         gameOver = false;
+
+        warning.gameObject.SetActive(false);
+
+        isWave = this.GetComponent<WaveManager>();
     }
 
     // Update is called once per frame
@@ -31,6 +39,16 @@ public class PlayerController : MonoBehaviour
         if(slimeScale == v0)
         {
             GameOver();
+        }
+
+        //Warning
+        if (isWave.nowWave == true)
+        {
+            if(slimeScale == v3)
+            {
+                warning.gameObject.SetActive(true);
+            }
+            
         }
     }
 

@@ -18,7 +18,7 @@ public class WaveManager : MonoBehaviour
 
     public Text waveText;
     public GameObject waveCanvas;
-
+    public GameObject warning;
 
     // Start is called before the first frame update
     void Start()
@@ -77,7 +77,7 @@ public class WaveManager : MonoBehaviour
                 Destroy(clone);
             }
 
-
+            //warning.gameObject.SetActive(true);
             enemyCreater.gameObject.SetActive(true);
             slimeCreater.gameObject.SetActive(false);
             nowWave = false;
@@ -95,6 +95,7 @@ public class WaveManager : MonoBehaviour
                 Destroy(clone);
             }
 
+            warning.gameObject.SetActive(false);
             enemyCreater.gameObject.SetActive(false);
             slimeCreater.gameObject.SetActive(true);
             nowWave = true;
