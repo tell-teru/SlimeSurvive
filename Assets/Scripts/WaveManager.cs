@@ -59,6 +59,24 @@ public class WaveManager : MonoBehaviour
                 Destroy(clone);
             }
 
+            var armarClones = GameObject.FindGameObjectsWithTag("Armar");
+            foreach (var clone in armarClones)
+            {
+                Destroy(clone);
+            }
+
+            var helClones = GameObject.FindGameObjectsWithTag("Helmet");
+            foreach (var clone in helClones)
+            {
+                Destroy(clone);
+            }
+
+            var kingClones = GameObject.FindGameObjectsWithTag("King");
+            foreach (var clone in kingClones)
+            {
+                Destroy(clone);
+            }
+
 
             enemyCreater.gameObject.SetActive(true);
             slimeCreater.gameObject.SetActive(false);

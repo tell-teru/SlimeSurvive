@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - Creater
   - Slime
+  - King
+  - Helmet
+  - Armar
   layers:
   - Default
   - TransparentFX

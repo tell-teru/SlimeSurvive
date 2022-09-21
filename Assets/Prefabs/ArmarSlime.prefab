@@ -192,8 +192,8 @@ GameObject:
   - component: {fileID: 6738675075406430200}
   - component: {fileID: 4123289795996813562}
   m_Layer: 0
-  m_Name: PowerSlime
-  m_TagString: Slime
+  m_Name: ArmarSlime
+  m_TagString: Armar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
