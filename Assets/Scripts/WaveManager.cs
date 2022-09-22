@@ -20,12 +20,23 @@ public class WaveManager : MonoBehaviour
     public GameObject waveCanvas;
     public GameObject warning;
 
+
+    //Camera
+    public Transform tf; //Main CameraのTransform
+    public Transform player;
+
+
     // Start is called before the first frame update
     void Start()
     {
         WaveSwitch();
 
         waveCanvas.gameObject.SetActive(false);
+
+
+        //Camera
+        tf = tf.gameObject.GetComponent<Transform>(); //Main CameraのTransformを取得する。
+        player = this.GetComponent<Transform>(); //Main CameraのTransformを取得する。
     }
 
     // Update is called once per frame
@@ -49,9 +60,14 @@ public class WaveManager : MonoBehaviour
     {
         if (nowWave == true)
         {
+            tf.position = player.position + new Vector3(0.0f, 1.75f, -2.63f); //カメラを移動。
+
+            //文字うきだし
             waveCanvas.gameObject.SetActive(true);
             StartCoroutine("TextSet");//コルーチンを実行
 
+
+            //クローン一気に消す
             //GameObject slime = GameObject.FindGameObjectWithTag("Slime");//Playerタグのオジェクトを探して
             var slimClones = GameObject.FindGameObjectsWithTag("Slime");
             foreach(var clone in slimClones)
@@ -89,6 +105,8 @@ public class WaveManager : MonoBehaviour
         }
         else
         {
+            tf.position = player.position + new Vector3(0.0f, 12.2f, -32.5f); //カメラを移動。
+
             var eneClones = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (var clone in eneClones)
             {
