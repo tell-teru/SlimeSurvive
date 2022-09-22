@@ -31,7 +31,7 @@ public class WaveManager : MonoBehaviour
     {
         WaveSwitch();
 
-        waveCanvas.gameObject.SetActive(false);
+        //waveCanvas.gameObject.SetActive(false);
 
 
         //Camera

@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 slimeScale;  //①仮の変数宣言
     Vector3 v0 = new Vector3(0.0f, 0.0f, 0.0f);
     Vector3 v3 = new Vector3(0.3f, 0.3f, 0.3f);
+    Vector3 v4 = new Vector3(0.4f, 0.4f, 0.4f);
 
     public GameObject gameOverText;
     public bool gameOver;
@@ -41,15 +42,18 @@ public class PlayerController : MonoBehaviour
             GameOver();
         }
 
-        //Warning
-        if (isWave.nowWave == true)
+
+        ////Warning
+        if (Vector3.SqrMagnitude(slimeScale - v3) < 0.0001)
         {
-            if(slimeScale == v3)
-            {
-                warning.gameObject.SetActive(true);
-            }
-            
+            warning.gameObject.SetActive(true);
         }
+
+        if (Vector3.SqrMagnitude(slimeScale - v4) < 0.0001)
+        {
+            warning.gameObject.SetActive(false);
+        }
+
     }
 
     public void OnTriggerEnter(Collider other)

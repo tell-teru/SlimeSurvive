@@ -40,15 +40,18 @@ public class WarningController : MonoBehaviour
 
     void Update()
     {
-        //if(slimeScale == v3)
+        if (Vector3.SqrMagnitude(slimeScale - v3) < 0.0001)
+        {
+            img.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, 1.0f));
+
+        }
+        //else
         //{
-        //    //Color.Lerpに開始の色、終了の色、0～1までのfloatを渡すと中間の色が返される。
-        //    //Mathf.PingPongに経過時間を渡すと、0～1までの値が返される。
-        //    img.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, 1.0f));
+        //    img.color = new Color32(255, 255, 255, 0);
         //}
 
         //Color.Lerpに開始の色、終了の色、0～1までのfloatを渡すと中間の色が返される。
         //Mathf.PingPongに経過時間を渡すと、0～1までの値が返される。
-        img.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, 1.0f));
+        //img.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, 1.0f));
     }
 }
