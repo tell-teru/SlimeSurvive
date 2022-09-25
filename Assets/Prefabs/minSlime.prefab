@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 7579059333198965116}
   - component: {fileID: 7579059333198965117}
   - component: {fileID: 7579059333198965118}
+  - component: {fileID: 8275425897707122676}
   m_Layer: 0
   m_Name: Slime_01
   m_TagString: Player
@@ -311,6 +312,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3136268
   m_Center: {x: -0.00072703365, y: 0.22422606, z: -0.000001078479}
+--- !u!114 &8275425897707122676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579059333198965104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7168eef5e5b104ba0bb9fdcc12b13af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7579059333231380450
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +382,7 @@ Transform:
   m_GameObject: {fileID: 7579059333461768869}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 300, y: 1, z: 300}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7579059333198965119}
   m_Father: {fileID: 0}

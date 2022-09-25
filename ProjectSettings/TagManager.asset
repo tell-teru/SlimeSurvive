@@ -11,6 +11,7 @@ TagManager:
   - King
   - Helmet
   - Armar
+  - Target
   layers:
   - Default
   - TransparentFX
