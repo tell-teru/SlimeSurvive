@@ -25,6 +25,12 @@ public class PlayerController : MonoBehaviour
     public Text armarText;
 
 
+    public AudioClip sound1;
+    public AudioClip sound2;
+    public AudioClip sound3;
+    AudioSource audioSource;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +45,9 @@ public class PlayerController : MonoBehaviour
         warning.gameObject.SetActive(false);
 
         isWave = this.GetComponent<WaveManager>();
+
+        //Componentを取得
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -79,6 +88,7 @@ public class PlayerController : MonoBehaviour
 
             Debug.Log("+1");
             Destroy(other.gameObject);
+            audioSource.PlayOneShot(sound1);
 
         }
 
@@ -93,6 +103,7 @@ public class PlayerController : MonoBehaviour
 
             Debug.Log("+3");
             Destroy(other.gameObject);
+            audioSource.PlayOneShot(sound1);
 
         }
 
@@ -102,6 +113,7 @@ public class PlayerController : MonoBehaviour
 
             Debug.Log("HP+3");
             Destroy(other.gameObject);
+            audioSource.PlayOneShot(sound1);
 
         }
 
@@ -117,6 +129,7 @@ public class PlayerController : MonoBehaviour
 
             Debug.Log("+10");
             Destroy(other.gameObject);
+            audioSource.PlayOneShot(sound1);
 
         }
 
@@ -132,11 +145,13 @@ public class PlayerController : MonoBehaviour
                 gameObject.transform.position -= new Vector3(0, 0.1f, 0);
 
                 Debug.Log("-1");
+                audioSource.PlayOneShot(sound2);
             }
             else if(playerHp != 0)
             {
                 playerHp -= 1;
                 Debug.Log("HP : " + playerHp);
+                audioSource.PlayOneShot(sound3);
             }
             
 

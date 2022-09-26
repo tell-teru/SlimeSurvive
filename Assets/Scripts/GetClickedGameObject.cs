@@ -15,6 +15,9 @@ public class GetClickedGameObject : MonoBehaviour
 
     PlayerController playerController;
 
+    public AudioClip sound2;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,9 @@ public class GetClickedGameObject : MonoBehaviour
 
         power = 30;
         target = GameObject.FindGameObjectWithTag("Enemy");
+
+        //Componentを取得
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -54,6 +60,7 @@ public class GetClickedGameObject : MonoBehaviour
                     gameObject.transform.position -= new Vector3(0, 0.1f, 0);
 
                     Debug.Log("-1");
+                    audioSource.PlayOneShot(sound2);
 
                     if (playerController.slimeScale == playerController.v0)
                     {
