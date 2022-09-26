@@ -2,29 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
 
     public Vector3 slimeScale;  //①仮の変数宣言
-    Vector3 v0 = new Vector3(0.0f, 0.0f, 0.0f);
+    public Vector3 v0 = new Vector3(0.0f, 0.0f, 0.0f);
     Vector3 v3 = new Vector3(0.3f, 0.3f, 0.3f);
     Vector3 v4 = new Vector3(0.4f, 0.4f, 0.4f);
 
     public GameObject gameOverText;
     public bool gameOver;
 
-    private int playerHp = 0;
+    public int playerHp = 0;
 
     public GameObject warning;
 
     WaveManager isWave;
 
+    public Text sizeText;
+    public Text armarText;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         slimeScale = gameObject.transform.localScale; //◆現在の大きさを代入
-
+        sizeText.text = "S I Z E : " + 5;
+        armarText.text = "Armar : " + 0;
 
         gameOverText.gameObject.SetActive(false);
         gameOver = false;
@@ -54,6 +61,9 @@ public class PlayerController : MonoBehaviour
             warning.gameObject.SetActive(false);
         }
 
+
+        sizeText.text = "S I Z E : " + Mathf.Ceil(slimeScale.x * 10);
+        armarText.text = "Armar : " + playerHp;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -133,7 +143,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void GameOver()
+    public void GameOver()
     {
         Debug.Log("GameOver");
 

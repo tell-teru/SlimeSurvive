@@ -13,9 +13,13 @@ public class GetClickedGameObject : MonoBehaviour
     public Rigidbody rb;
     public GameObject target;
 
+    PlayerController playerController;
+
     // Start is called before the first frame update
     void Start()
     {
+        playerController = this.gameObject.GetComponent<PlayerController>();
+
         power = 30;
         target = GameObject.FindGameObjectWithTag("Enemy");
     }
@@ -41,8 +45,26 @@ public class GetClickedGameObject : MonoBehaviour
                     //Destroy(clickedGameObject);
 
                     //HitTarget();
+
+
+                    playerController.slimeScale -= new Vector3(0.1f, 0.1f, 0.1f);//②変数keroのx座標を1増やして代入
+
+                    gameObject.transform.localScale = playerController.slimeScale; //③大きさに変数keroを代入
+
+                    gameObject.transform.position -= new Vector3(0, 0.1f, 0);
+
+                    Debug.Log("-1");
+
+                    if (playerController.slimeScale == playerController.v0)
+                    {
+                        playerController.GameOver();
+                    }
+
                 }
             }
+
+            playerController.sizeText.text = "S I Z E : " + Mathf.Ceil(playerController.slimeScale.x * 10) ;
+            playerController.armarText.text = "Armar : " + playerController.playerHp;
 
             Debug.Log(clickedGameObject);
         }

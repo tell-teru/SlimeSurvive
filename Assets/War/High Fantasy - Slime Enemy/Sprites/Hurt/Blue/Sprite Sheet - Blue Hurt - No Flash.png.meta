@@ -36,7 +36,7 @@ TextureImporter:
       213: -90551785473829027
     second: Sprite Sheet - Blue Hurt - No Flash_10
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -57,6 +57,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -95,6 +96,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -110,6 +112,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -364,6 +390,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Sprite Sheet - Blue Hurt - No Flash_1: -6604357783511395730
+      Sprite Sheet - Blue Hurt - No Flash_10: -90551785473829027
+      Sprite Sheet - Blue Hurt - No Flash_6: 1666675360449750814
+      Sprite Sheet - Blue Hurt - No Flash_0: -312629749974274740
+      Sprite Sheet - Blue Hurt - No Flash_9: -5853888887820446031
+      Sprite Sheet - Blue Hurt - No Flash_7: -2200570046973972164
+      Sprite Sheet - Blue Hurt - No Flash_4: 3922437313417285677
+      Sprite Sheet - Blue Hurt - No Flash_8: -4833481169714461501
+      Sprite Sheet - Blue Hurt - No Flash_3: -5984103662035008511
+      Sprite Sheet - Blue Hurt - No Flash_5: 4949370408667167521
+      Sprite Sheet - Blue Hurt - No Flash_2: 5135555786090190422
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

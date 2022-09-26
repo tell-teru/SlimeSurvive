@@ -45,7 +45,7 @@ TextureImporter:
       213: 7516819113228650899
     second: Sprite Sheet - Blue Death - No Flash_13
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -66,6 +66,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -104,6 +105,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -119,6 +121,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -436,6 +462,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Sprite Sheet - Blue Death - No Flash_4: 4184073933361864819
+      Sprite Sheet - Blue Death - No Flash_2: 787246434355788426
+      Sprite Sheet - Blue Death - No Flash_11: 5078594154368035550
+      Sprite Sheet - Blue Death - No Flash_6: 2891910119783949780
+      Sprite Sheet - Blue Death - No Flash_9: 4408185565186183419
+      Sprite Sheet - Blue Death - No Flash_0: 4999743868682403865
+      Sprite Sheet - Blue Death - No Flash_13: 7516819113228650899
+      Sprite Sheet - Blue Death - No Flash_12: -1515882149595691805
+      Sprite Sheet - Blue Death - No Flash_7: 7367002259730081837
+      Sprite Sheet - Blue Death - No Flash_10: 2277713452295504747
+      Sprite Sheet - Blue Death - No Flash_8: -8621852893317066370
+      Sprite Sheet - Blue Death - No Flash_5: 9168903714336264564
+      Sprite Sheet - Blue Death - No Flash_1: -8802889016159510022
+      Sprite Sheet - Blue Death - No Flash_3: 5591019307192893529
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
