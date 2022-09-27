@@ -10,6 +10,7 @@ public class WaveManager : MonoBehaviour
 
     public GameObject slimeCreater;
     public GameObject enemyCreater;
+    public GameObject MinSlimeGenerator;
 
     public bool nowWave = false;
 
@@ -96,6 +97,7 @@ public class WaveManager : MonoBehaviour
             //warning.gameObject.SetActive(true);
             enemyCreater.gameObject.SetActive(true);
             slimeCreater.gameObject.SetActive(false);
+            MinSlimeGenerator.gameObject.SetActive(true);
             nowWave = false;
             Debug.Log("WAVE : " + waveCount);
             waveText.text = "WAVE : " + waveCount;
@@ -116,6 +118,7 @@ public class WaveManager : MonoBehaviour
             warning.gameObject.SetActive(false);
             enemyCreater.gameObject.SetActive(false);
             slimeCreater.gameObject.SetActive(true);
+            MinSlimeGenerator.gameObject.SetActive(false);
             nowWave = true;
             Debug.Log("探索");
             waveText.text = "SEARCH";

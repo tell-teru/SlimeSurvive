@@ -1,61 +1,65 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MinSlimeCreator : MonoBehaviour
 {
-    public GameObject minSlimePre;
-    GameObject Ball;
 
-    // インスペクタから直接、親オブジェクトを指定するとか
-    public GameObject parentObject;
+    public GameObject ballPrefab;
+    public float speed;
+    public GameObject player;
+
+    PlayerController playerController;
 
 
-
-
-    //public GameObject player;
-    Vector3 position;
-
+    //public AudioClip sound2;
+    //AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerController = player.gameObject.GetComponent<PlayerController>();
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");//Playerタグのオジェクトを探して
-        position = player.transform.position;
-
-        // タグ名から親オブジェクトを探して取得するとか
-        //GameObject parentObject = GameObject.FindGameObjectWithTag("ParentObject");
+        //Componentを取得
+        //audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Debug.Log("kurikku");
+            Shot();
 
-            //// prefabObjectにはプレハブが指定されているとします
-            //GameObject childObject = Instantiate(prefabObject) as GameObject;
-            //childObject.transform.parent = parentObject.transform;
+            playerController.slimeScale -= new Vector3(0.1f, 0.1f, 0.1f);//②変数keroのx座標を1増やして代入
+
+            gameObject.transform.localScale = playerController.slimeScale; //③大きさに変数keroを代入
+
+            gameObject.transform.position -= new Vector3(0, 0.1f, 0);
+
+            Debug.Log("-1");
+            //audioSource.PlayOneShot(sound2);
+
+            if (playerController.slimeScale == playerController.v0)
+            {
+                playerController.GameOver();
+            }
 
 
-            //Ball = Instantiate(minSlimePre) as GameObject;
-            Ball = Instantiate(minSlimePre, position, Quaternion.identity);
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Vector3 worldDir = ray.direction;
-            Ball.GetComponent<MinSlimeController>().Shoot(worldDir.normalized * 3000);
+            playerController.sizeText.text = "S I Z E : " + Mathf.Ceil(playerController.slimeScale.x * 10);
+            playerController.armarText.text = "Armar : " + playerController.playerHp;
         }
-        Destroy(Ball, 10.0f);
-
-
-
     }
 
-    private GameObject Instantiate(GameObject minSlimePre, object parent, Quaternion identity)
+
+    public void Shot()
     {
-        throw new NotImplementedException();
+        GameObject ball = (GameObject)Instantiate(ballPrefab, transform.position, Quaternion.identity);
+        Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
+        ballRigidbody.AddForce(transform.forward * speed);
+
+
+        Destroy(ball, 10.0f);
     }
+
 }

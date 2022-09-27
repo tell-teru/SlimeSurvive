@@ -73,6 +73,9 @@ public class PlayerController : MonoBehaviour
 
         sizeText.text = "S I Z E : " + Mathf.Ceil(slimeScale.x * 10);
         armarText.text = "Armar : " + playerHp;
+
+
+        
     }
 
     public void OnTriggerEnter(Collider other)
@@ -156,6 +159,12 @@ public class PlayerController : MonoBehaviour
             
 
         }
+    }
+
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        
     }
 
     public void GameOver()
