@@ -78,7 +78,8 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter(Collider other)
+    //public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
         //Debug.Log(" Hit ");
         if(other.gameObject.tag == "Slime")
@@ -162,10 +163,10 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void OnCollisionEnter(Collision collision)
-    {
+    //public void OnCollisionEnter(Collision collision)
+    //{
         
-    }
+    //}
 
     public void GameOver()
     {
