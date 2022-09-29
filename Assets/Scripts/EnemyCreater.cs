@@ -29,7 +29,7 @@ public class EnemyCreater : MonoBehaviour
         playerpos = player.gameObject.transform;//中心座標
 
 
-        enepos = playerpos.position + CircleHorizon(100);// 半径()の円周上に出現
+        enepos = playerpos.position + CircleHorizon(50);// 半径()の円周上に出現
 
         if (norEneTimer >= norEneInterval)
         {

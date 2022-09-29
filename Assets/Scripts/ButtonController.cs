@@ -23,6 +23,13 @@ public class ButtonController : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
+                SceneManager.LoadScene("Rule");
+            }
+        }
+        if (SceneManager.GetActiveScene().name == "Rule")
+        {
+            if (Input.GetMouseButton(0))
+            {
                 SceneManager.LoadScene("Main");
             }
         }

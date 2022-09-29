@@ -163,10 +163,6 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    //public void OnCollisionEnter(Collision collision)
-    //{
-        
-    //}
 
     public void GameOver()
     {
