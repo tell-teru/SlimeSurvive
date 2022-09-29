@@ -30,7 +30,12 @@ public class PlayerController : MonoBehaviour
     public AudioClip sound3;
     AudioSource audioSource;
 
+    public GameObject addCanvas;
+    public Text addText;
 
+
+    [SerializeField] GameObject waterPrefab;
+    [SerializeField] GameObject explosionPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -91,6 +96,13 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.position += new Vector3(0, 0.1f, 0);
 
             Debug.Log("+1");
+            addText.text = "+1";
+            StartCoroutine("TextSet");//コルーチンを実行
+
+
+            Instantiate(waterPrefab, transform.position, Quaternion.identity);
+            //Destroy(waterPrefab.gameObject);
+
             Destroy(other.gameObject);
             audioSource.PlayOneShot(sound1);
 
@@ -106,6 +118,12 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.position += new Vector3(0, 0.3f, 0);
 
             Debug.Log("+3");
+            addText.text = "+3";
+            StartCoroutine("TextSet");//コルーチンを実行
+
+            Instantiate(waterPrefab, transform.position, Quaternion.identity);
+            //Destroy(waterPrefab.gameObject);
+
             Destroy(other.gameObject);
             audioSource.PlayOneShot(sound1);
 
@@ -116,6 +134,10 @@ public class PlayerController : MonoBehaviour
             playerHp += 3;
 
             Debug.Log("HP+3");
+
+            Instantiate(waterPrefab, transform.position, Quaternion.identity);
+            //Destroy(waterPrefab.gameObject);
+
             Destroy(other.gameObject);
             audioSource.PlayOneShot(sound1);
 
@@ -132,6 +154,12 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.position += new Vector3(0, 1.0f, 0);
 
             Debug.Log("+10");
+            addText.text = "+10";
+            StartCoroutine("TextSet");//コルーチンを実行
+
+            Instantiate(waterPrefab, transform.position, Quaternion.identity);
+            //Destroy(waterPrefab.gameObject);
+
             Destroy(other.gameObject);
             audioSource.PlayOneShot(sound1);
 
@@ -149,6 +177,12 @@ public class PlayerController : MonoBehaviour
                 gameObject.transform.position -= new Vector3(0, 0.1f, 0);
 
                 Debug.Log("-1");
+                addText.text = "-1";
+                StartCoroutine("TextSet");//コルーチンを実行
+
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                //Destroy(explosionPrefab.gameObject);
+
                 audioSource.PlayOneShot(sound2);
             }
             else if(playerHp != 0)
@@ -172,5 +206,12 @@ public class PlayerController : MonoBehaviour
         gameOver = true;
 
         SceneManager.LoadScene("GameOver");
+    }
+
+    //実行内容 1秒待ってからテキスト非表示
+    IEnumerator TextSet()
+    {
+        yield return new WaitForSeconds(0.3f);
+        addText.text = "";
     }
 }
