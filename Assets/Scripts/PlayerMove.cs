@@ -8,12 +8,17 @@ public class PlayerMove : MonoBehaviour
 
     Rigidbody rb;
 
+    Vector3 m_EulerAngleVelocity;
+
     // Start is called before the first frame update
     void Start()
     {
         //Rigidbodyを取得
         rb = GetComponent<Rigidbody>();
         Physics.gravity = new Vector3(0, -30, 0);
+
+
+        m_EulerAngleVelocity = new Vector3(0, 100, 0);
     }
 
     void Update()
@@ -54,16 +59,23 @@ public class PlayerMove : MonoBehaviour
             //Debug.Log("S");
             rb.velocity = -transform.forward * speed;
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             //Debug.Log("D");
-            rb.velocity = transform.right * speed;
+            //rb.velocity = transform.right * speed;
+
+            Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
+            rb.MoveRotation(rb.rotation * deltaRotation);
         }
         if (Input.GetKey(KeyCode.A))
         {
             //Debug.Log("A");
-            rb.velocity = -transform.right * speed;
+            //rb.velocity = -transform.right * speed;
+
+            Quaternion deltaRotation = Quaternion.Euler(-m_EulerAngleVelocity * Time.deltaTime);
+            rb.MoveRotation(rb.rotation * deltaRotation);
         }
+
 
 
     }
