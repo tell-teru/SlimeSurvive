@@ -59,7 +59,7 @@ public class MinSlimeCreator : MonoBehaviour
         ballRigidbody.AddForce(transform.forward * speed);
 
 
-        Destroy(ball, 10.0f);
+        Destroy(ball, 5.0f);
     }
 
 }

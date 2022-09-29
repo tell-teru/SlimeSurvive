@@ -61,7 +61,7 @@ public class WaveManager : MonoBehaviour
     {
         if (nowWave == true)
         {
-            tf.position = player.position + new Vector3(0.0f, 1.75f, -2.63f); //カメラを移動。
+            //tf.position = player.position + new Vector3(0.0f, 1.75f, -2.63f); //カメラを移動。
 
             //文字うきだし
             waveCanvas.gameObject.SetActive(true);
@@ -107,7 +107,7 @@ public class WaveManager : MonoBehaviour
         }
         else
         {
-            tf.position = player.position + new Vector3(0.0f, 12.2f, -32.5f); //カメラを移動。
+            //tf.position = player.position + new Vector3(0.0f, 12.2f, -32.5f); //カメラを移動。
 
             var eneClones = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (var clone in eneClones)

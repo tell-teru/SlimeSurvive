@@ -5,34 +5,41 @@ using UnityEngine;
 public class CameraZoom : MonoBehaviour
 {
 
+    private GameObject mainCamera;      //メインカメラ格納用
+    private GameObject subCamera;       //サブカメラ格納用
+
     WaveManager waveManager;
-    public GameObject parent;
 
     //Camera
     //public Transform tf; //Main CameraのTransform
-    public Transform player;
+    public GameObject player;
 
     void Start()
     {
-        //Camera
-        //tf = tf.gameObject.GetComponent<Transform>(); //Main CameraのTransformを取得する。
-        player = this.GetComponent<Transform>(); //Main CameraのTransformを取得する。
+        waveManager = player.gameObject.GetComponent<WaveManager>();
 
-        waveManager = parent.gameObject.GetComponent<WaveManager>();
+        //メインカメラとサブカメラをそれぞれ取得
+        mainCamera = GameObject.Find("MainCamera");
+        subCamera = GameObject.Find("SubCamera");
+
+        //サブカメラを非アクティブにする
+        mainCamera.SetActive(false);
     }
 
     void Update()
     {
-        if(waveManager.nowWave == true)
+        //スペースキーが押されている間、サブカメラをアクティブにする
+        if (waveManager.nowWave == true)
         {
-            player.position = new Vector3(300.0f, 1f, 300f) +  new Vector3(0.0f, 1.75f, -2.63f); //カメラを移動。
+            //サブカメラをアクティブに設定
+            mainCamera.SetActive(false);
+            subCamera.SetActive(true);
         }
-
-        else if (waveManager.nowWave == false)
+        else if(waveManager.nowWave == false)
         {
-            player.position = new Vector3(300.0f, 1f, 300f) + new Vector3(0.0f, 12.2f, -32.5f); //カメラを移動。
+            //メインカメラをアクティブに設定
+            mainCamera.SetActive(true);
+            subCamera.SetActive(false);
         }
-
-
     }
 }

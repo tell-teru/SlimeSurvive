@@ -13,11 +13,14 @@ public class PlayerMove : MonoBehaviour
     {
         //Rigidbodyを取得
         rb = GetComponent<Rigidbody>();
-
+        Physics.gravity = new Vector3(0, -30, 0);
     }
 
     void Update()
     {
+
+        Vector3 tmp = GameObject.Find("Player").transform.position;
+
         if (Input.GetKey(KeyCode.UpArrow))
         {
             rb.velocity = transform.forward * speed;
@@ -41,40 +44,27 @@ public class PlayerMove : MonoBehaviour
             //transform.position -= transform.right * speed * Time.deltaTime;
             rb.velocity = -transform.right * speed;
         }
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    //Debug.Log("W");
-        //    transform.position += transform.forward * speed * Time.deltaTime;
-        //}
-        //if (Input.GetKey(KeyCode.S))
-        //{
-        //    //Debug.Log("S");
-        //    transform.position -= transform.forward * speed * Time.deltaTime;
-        //}
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.W))
+        {
+            //Debug.Log("W");
+            rb.velocity = transform.forward * speed;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            //Debug.Log("S");
+            rb.velocity = -transform.forward * speed;
+        }
+        if (Input.GetKeyDown(KeyCode.D))
         {
             //Debug.Log("D");
-            //transform.position += transform.right * speed * Time.deltaTime;
-            transform.Rotate(new Vector3(0, 1, 0));
+            rb.velocity = transform.right * speed;
         }
         if (Input.GetKey(KeyCode.A))
         {
             //Debug.Log("A");
-            //transform.position -= transform.right * speed * Time.deltaTime;
-            transform.Rotate(new Vector3(0, -1, 0));
+            rb.velocity = -transform.right * speed;
         }
 
-
-        //// 入力をxとzに代入
-        //float x = Input.GetAxis("Horizontal");
-        //float z = Input.GetAxis("Vertical");
-
-
-        //////Rigidbodyを取得
-        ////Rigidbody rb = GetComponent<Rigidbody>();
-
-        ////Rigidbodyに力を加える
-        //rb.AddForce(x, 0, z);
 
     }
 
