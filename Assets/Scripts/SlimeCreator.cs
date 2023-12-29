@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeCreater : MonoBehaviour
+public class SlimeCreator : MonoBehaviour
 {
     public GameObject[] slimes;
     int slimeNumber;
