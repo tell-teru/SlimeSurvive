@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeCreator : MonoBehaviour
+public class SlimeCreator : BaseCreator
 {
-    public GameObject[] slimes;
+    public BaseCharacter[] slimes;
     int slimeNumber;
 
     //public GameObject normalSlime;
@@ -19,19 +19,7 @@ public class SlimeCreator : MonoBehaviour
         Create();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        createTime += Time.deltaTime;
-
-        if (createTime >= 10f)
-        {
-            Create();
-            createTime = 0.0f;
-        }
-    }
-
-    void Create()
+    protected override void Create()
     {
         for (int i = 0; i <= createNum; i++)
         {
@@ -41,8 +29,10 @@ public class SlimeCreator : MonoBehaviour
 
             slimeNumber = Random.Range(0, slimes.Length);
             transform.position = new Vector3(x, 0, z);
-            Instantiate(slimes[slimeNumber], transform.position, transform.rotation);
+            Create(slimes[slimeNumber], transform);
 
         }
     }
+
+
 }

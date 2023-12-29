@@ -68,8 +68,8 @@ public class WaveManager : MonoBehaviour
             StartCoroutine("TextSet");//コルーチンを実行
 
 
+            /*
             //クローン一気に消す
-            //GameObject slime = GameObject.FindGameObjectWithTag("Slime");//Playerタグのオジェクトを探して
             var slimClones = GameObject.FindGameObjectsWithTag("Slime");
             foreach(var clone in slimClones)
             {
@@ -93,6 +93,7 @@ public class WaveManager : MonoBehaviour
             {
                 Destroy(clone);
             }
+            */
 
             //warning.gameObject.SetActive(true);
             enemyCreater.gameObject.SetActive(true);
@@ -131,6 +132,16 @@ public class WaveManager : MonoBehaviour
     {
         Debug.Log("CLEAR");
         SceneManager.LoadScene("Clear");
+    }
+
+    // Cloneのオーバーロード
+    void DestroyClonesWithTag(string tag)
+    {
+        var clones = GameObject.FindGameObjectsWithTag(tag);
+        foreach (var clone in clones)
+        {
+            Destroy(clone);
+        }
     }
 
 

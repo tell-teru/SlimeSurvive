@@ -86,8 +86,15 @@ public class PlayerController : MonoBehaviour
     //public void OnTriggerEnter(Collider other)
     public void OnCollisionEnter(Collision other)
     {
+        if (!other.gameObject.TryGetComponent<BaseCharacter>(out BaseCharacter baseCharacter))
+        { 
+            return;
+        }
+
+        SlimeType slimeType = baseCharacter.SlimeType;
+
         //Debug.Log(" Hit ");
-        if(other.gameObject.tag == "Slime")
+        if (slimeType == SlimeType.Hp)
         {
             slimeScale += new Vector3(0.1f, 0.1f, 0.1f);//②変数keroのx座標を1増やして代入
 
@@ -108,7 +115,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "Armar")
+        if (slimeType == SlimeType.Armer)
         {
 
             slimeScale += new Vector3(0.3f, 0.3f, 0.3f);//②変数keroのx座標を1増やして代入
@@ -129,7 +136,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "Helmet")
+        if (slimeType == SlimeType.Helmet)
         {
             playerHp += 3;
 
@@ -143,7 +150,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "King")
+        if (slimeType == SlimeType.King)
         {
             playerHp += 5;
 
@@ -165,7 +172,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "Enemy")
+        if (slimeType == SlimeType.Enemy)
         {
 
             if(playerHp == 0)

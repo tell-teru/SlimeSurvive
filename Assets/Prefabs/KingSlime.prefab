@@ -101,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6614844695326819789}
   - component: {fileID: -1950086206698415196}
+  - component: {fileID: 5289978658907028106}
   m_Layer: 0
   m_Name: KingSlime
   m_TagString: King
@@ -137,6 +138,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0, y: 0.3, z: 0}
+--- !u!114 &5289978658907028106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3140271309381977249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e440c9edb58e4281a65301c495a30b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slimeType: 3
 --- !u!1 &5997968386390066172
 GameObject:
   m_ObjectHideFlags: 0

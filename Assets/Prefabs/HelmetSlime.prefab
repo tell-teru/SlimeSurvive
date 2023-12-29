@@ -43,6 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1793725257800417863}
   - component: {fileID: 337550419398778210}
+  - component: {fileID: 6746841088700042469}
   m_Layer: 0
   m_Name: HelmetSlime
   m_TagString: Helmet
@@ -79,6 +80,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0, y: 0.3, z: 0}
+--- !u!114 &6746841088700042469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418430691299252477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e440c9edb58e4281a65301c495a30b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slimeType: 1
 --- !u!1 &2026026327192885206
 GameObject:
   m_ObjectHideFlags: 0
