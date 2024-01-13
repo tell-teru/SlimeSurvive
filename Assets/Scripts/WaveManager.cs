@@ -67,8 +67,6 @@ public class WaveManager : MonoBehaviour
             waveCanvas.gameObject.SetActive(true);
             StartCoroutine("TextSet");//コルーチンを実行
 
-
-            /*
             //クローン一気に消す
             var slimClones = GameObject.FindGameObjectsWithTag("Slime");
             foreach(var clone in slimClones)
@@ -93,8 +91,7 @@ public class WaveManager : MonoBehaviour
             {
                 Destroy(clone);
             }
-            */
-
+            
             //warning.gameObject.SetActive(true);
             enemyCreater.gameObject.SetActive(true);
             slimeCreater.gameObject.SetActive(false);
@@ -143,7 +140,6 @@ public class WaveManager : MonoBehaviour
             Destroy(clone);
         }
     }
-
 
     //実行内容 1秒待ってからテキスト非表示
     IEnumerator TextSet()

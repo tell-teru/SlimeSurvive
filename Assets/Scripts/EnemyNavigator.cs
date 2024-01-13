@@ -26,6 +26,5 @@ public class EnemyNavigator : BaseCharacter
     public override void Setup()
     {
         base.Setup();
-        Debug.Log("エネミーがセットアップされた");
     }
 }

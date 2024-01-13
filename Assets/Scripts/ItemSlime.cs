@@ -7,7 +7,6 @@ public class ItemSlime : BaseCharacter
     public override void Setup()
     {
         base.Setup();
-        Debug.Log("アイテムスライムがセットアップされた");
     }
 
 
