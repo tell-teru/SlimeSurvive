@@ -7,8 +7,20 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
-    public Vector3 slimeScale;  //①仮の変数宣言
-    public Vector3 v0 = new Vector3(0.0f, 0.0f, 0.0f);
+    private Vector3 slimeScale;  //①仮の変数宣言
+    public Vector3 SlimeScale
+    {
+        get { return slimeScale; }
+        set { slimeScale = value; }
+    }
+
+    private Vector3 v0 = new Vector3(0.0f, 0.0f, 0.0f);
+    public Vector3 V0
+    {
+        get { return v0; }
+        set { v0 = value; }
+    }
+
     private Vector3 v3 = new Vector3(0.3f, 0.3f, 0.3f);
     private Vector3 v4 = new Vector3(0.4f, 0.4f, 0.4f);
 
@@ -16,7 +28,6 @@ public class PlayerController : MonoBehaviour
     private bool gameOver;
 
     private int playerHp = 0;
-
     public int PlayerHp
     {
         get { return playerHp; }
@@ -26,9 +37,19 @@ public class PlayerController : MonoBehaviour
 
     private WaveManager isWave;
 
-    public Text sizeText;
-    public Text armarText;
+    [SerializeField] Text sizeText;
+    [SerializeField] Text armarText;
+    public Text SizeText
+    {
+        get { return sizeText; }
+        set { sizeText = value; }
+    }
 
+    public Text ArmarText
+    {
+        get { return armarText; }
+        set { armarText = value; }
+    }
 
     [SerializeField] private AudioClip sound1;
     [SerializeField] private AudioClip sound2;
@@ -84,8 +105,6 @@ public class PlayerController : MonoBehaviour
         sizeText.text = "S I Z E : " + Mathf.Ceil(slimeScale.x * 10);
         armarText.text = "Armar : " + playerHp;
 
-
-        
     }
 
     //public void OnTriggerEnter(Collider other)

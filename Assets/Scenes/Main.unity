@@ -1986,11 +1986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c57db99f1d14490bdbc6f0762efde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slimeScale: {x: 0, y: 0, z: 0}
-  v0: {x: 0, y: 0, z: 0}
   gameOverText: {fileID: 1687803163}
-  gameOver: 0
-  playerHp: 0
   warning: {fileID: 1523982043}
   sizeText: {fileID: 2102276688}
   armarText: {fileID: 1062655787}
@@ -2029,12 +2025,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbdd0ae8824994bcd81e326c52f82c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveTimer: 0
   slimeCreater: {fileID: 1248042020}
   enemyCreater: {fileID: 749916925}
   MinSlimeGenerator: {fileID: 196135201}
   nowWave: 0
-  waveCount: 0
   waveText: {fileID: 429223354}
   waveCanvas: {fileID: 1761230864}
   warning: {fileID: 1523982043}
