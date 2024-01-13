@@ -15,7 +15,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject gameOverText;
     private bool gameOver;
 
-    public int playerHp = 0;
+    private int playerHp = 0;
+
+    public int PlayerHp
+    {
+        get { return playerHp; }
+    }
 
     [SerializeField] private GameObject warning;
 

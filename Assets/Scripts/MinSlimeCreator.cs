@@ -43,7 +43,7 @@ public class MinSlimeCreator : MonoBehaviour
 
 
             playerController.sizeText.text = "S I Z E : " + Mathf.Ceil(playerController.slimeScale.x * 10);
-            playerController.armarText.text = "Armar : " + playerController.playerHp;
+            playerController.armarText.text = "Armar : " + playerController.PlayerHp;
         }
     }
 
