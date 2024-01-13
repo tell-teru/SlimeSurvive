@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class TimeLimit : MonoBehaviour
 {
-    public Image timeObj;
-    public bool roop;
-    public float countTime = 10.0f;
+    private Image timeObj;
+    private float countTime = 10.0f;
 
-    public float time;
+    private float time;
 
     // Start is called before the first frame update
     void Start()

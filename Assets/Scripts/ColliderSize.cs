@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ColliderSize : MonoBehaviour
 {
-    SphereCollider col;
+    private SphereCollider col;
     private float size;
     private bool flag;
 

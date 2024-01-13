@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SphereSize : MonoBehaviour
 {
-    public GameObject prefab;
+    [SerializeField] private GameObject prefab;
     private GameObject ballObj;
     private Vector3 mousePosition;
     private int count;

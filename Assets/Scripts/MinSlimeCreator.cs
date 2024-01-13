@@ -5,15 +5,11 @@ using UnityEngine;
 public class MinSlimeCreator : MonoBehaviour
 {
 
-    public GameObject ballPrefab;
-    public float speed;
-    public GameObject player;
+    [SerializeField] private GameObject ballPrefab;
+    [SerializeField] private float speed;
+    [SerializeField] private GameObject player;
 
-    PlayerController playerController;
-
-
-    //public AudioClip sound2;
-    //AudioSource audioSource;
+    private PlayerController playerController;
 
     // Start is called before the first frame update
     void Start()

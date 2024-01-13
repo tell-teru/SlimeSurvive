@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float speed = 5.0f;
+    [SerializeField] private float speed = 5.0f;
 
-    Rigidbody rb;
+    private Rigidbody rb;
 
-    Vector3 m_EulerAngleVelocity;
+    private Vector3 m_EulerAngleVelocity;
 
     // Start is called before the first frame update
     void Start()
@@ -29,55 +29,37 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             rb.velocity = transform.forward * speed;
-            //rb.AddForce(transform.forward * speed);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            //Debug.Log("↓");
-            //transform.position -= transform.forward * speed * Time.deltaTime;
             rb.velocity = -transform.forward * speed;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            //Debug.Log("→");
-            //transform.position += transform.right * speed * Time.deltaTime;
             rb.velocity = transform.right * speed;
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            //Debug.Log("←");
-            //transform.position -= transform.right * speed * Time.deltaTime;
             rb.velocity = -transform.right * speed;
         }
         if (Input.GetKey(KeyCode.W))
         {
-            //Debug.Log("W");
             rb.velocity = transform.forward * speed;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            //Debug.Log("S");
             rb.velocity = -transform.forward * speed;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            //Debug.Log("D");
-            //rb.velocity = transform.right * speed;
-
             Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
             rb.MoveRotation(rb.rotation * deltaRotation);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            //Debug.Log("A");
-            //rb.velocity = -transform.right * speed;
-
             Quaternion deltaRotation = Quaternion.Euler(-m_EulerAngleVelocity * Time.deltaTime);
             rb.MoveRotation(rb.rotation * deltaRotation);
         }
-
-
-
     }
 
 }

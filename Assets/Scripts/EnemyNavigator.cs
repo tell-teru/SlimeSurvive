@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyNavigator : MonoBehaviour
 {
-    public Transform target;
-    NavMeshAgent agent;
+    [SerializeField] private Transform target;
+    private NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()

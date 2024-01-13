@@ -9,33 +9,33 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 slimeScale;  //①仮の変数宣言
     public Vector3 v0 = new Vector3(0.0f, 0.0f, 0.0f);
-    Vector3 v3 = new Vector3(0.3f, 0.3f, 0.3f);
-    Vector3 v4 = new Vector3(0.4f, 0.4f, 0.4f);
+    private Vector3 v3 = new Vector3(0.3f, 0.3f, 0.3f);
+    private Vector3 v4 = new Vector3(0.4f, 0.4f, 0.4f);
 
-    public GameObject gameOverText;
-    public bool gameOver;
+    [SerializeField] private GameObject gameOverText;
+    private bool gameOver;
 
     public int playerHp = 0;
 
-    public GameObject warning;
+    [SerializeField] private GameObject warning;
 
-    WaveManager isWave;
+    private WaveManager isWave;
 
     public Text sizeText;
     public Text armarText;
 
 
-    public AudioClip sound1;
-    public AudioClip sound2;
-    public AudioClip sound3;
-    AudioSource audioSource;
+    [SerializeField] private AudioClip sound1;
+    [SerializeField] private AudioClip sound2;
+    [SerializeField] private AudioClip sound3;
+    private AudioSource audioSource;
 
-    public GameObject addCanvas;
-    public Text addText;
+    [SerializeField] private GameObject addCanvas;
+    [SerializeField] private Text addText;
 
 
-    [SerializeField] GameObject waterPrefab;
-    [SerializeField] GameObject explosionPrefab;
+    [SerializeField] private GameObject waterPrefab;
+    [SerializeField] private GameObject explosionPrefab;
 
     // Start is called before the first frame update
     void Start()

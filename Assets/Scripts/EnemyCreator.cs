@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EnemyCreator : MonoBehaviour
 {
-    public GameObject normalEnemy;
+    [SerializeField] public GameObject normalEnemy;
 
-    float norEneTimer = 0f;
-    float norEneInterval =　0.5f;
+    private float norEneTimer = 0f;
+    private float norEneInterval =　0.5f;
 
-    PlayerController playerController;
-    public GameObject player;
+    private PlayerController playerController;
+    [SerializeField] public GameObject player;
 
     private Transform playerpos;
     private Vector3 enepos;
