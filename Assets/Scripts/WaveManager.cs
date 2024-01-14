@@ -139,7 +139,7 @@ public class WaveManager : MonoBehaviour
         {
             Destroy(clone);
         }
-    }
+    } // テスト
 
     //実行内容 1秒待ってからテキスト非表示
     IEnumerator TextSet()
