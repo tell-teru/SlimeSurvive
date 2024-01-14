@@ -5,15 +5,11 @@ using UnityEngine;
 public class MinSlimeCreator : MonoBehaviour
 {
 
-    public GameObject ballPrefab;
-    public float speed;
-    public GameObject player;
+    [SerializeField] private GameObject ballPrefab;
+    [SerializeField] private float speed;
+    [SerializeField] private GameObject player;
 
-    PlayerController playerController;
-
-
-    //public AudioClip sound2;
-    //AudioSource audioSource;
+    private PlayerController playerController;
 
     // Start is called before the first frame update
     void Start()
@@ -31,23 +27,23 @@ public class MinSlimeCreator : MonoBehaviour
         {
             Shot();
 
-            playerController.slimeScale -= new Vector3(0.1f, 0.1f, 0.1f);//②変数keroのx座標を1増やして代入
+            playerController.SlimeScale -= new Vector3(0.1f, 0.1f, 0.1f);//②変数keroのx座標を1増やして代入
 
-            gameObject.transform.localScale = playerController.slimeScale; //③大きさに変数keroを代入
+            gameObject.transform.localScale = playerController.SlimeScale; //③大きさに変数keroを代入
 
             gameObject.transform.position -= new Vector3(0, 0.1f, 0);
 
             Debug.Log("-1");
             //audioSource.PlayOneShot(sound2);
 
-            if (playerController.slimeScale == playerController.v0)
+            if (playerController.SlimeScale == playerController.V0)
             {
                 playerController.GameOver();
             }
 
 
-            playerController.sizeText.text = "S I Z E : " + Mathf.Ceil(playerController.slimeScale.x * 10);
-            playerController.armarText.text = "Armar : " + playerController.playerHp;
+            playerController.SizeText.text = "S I Z E : " + Mathf.Ceil(playerController.SlimeScale.x * 10);
+            playerController.ArmarText.text = "Armar : " + playerController.PlayerHp;
         }
     }
 

@@ -8,11 +8,11 @@ public class CameraZoom : MonoBehaviour
     private GameObject mainCamera;      //メインカメラ格納用
     private GameObject subCamera;       //サブカメラ格納用
 
-    WaveManager waveManager;
+    private WaveManager waveManager;
 
     //Camera
     //public Transform tf; //Main CameraのTransform
-    public GameObject player;
+    [SerializeField] private GameObject player;
 
     void Start()
     {

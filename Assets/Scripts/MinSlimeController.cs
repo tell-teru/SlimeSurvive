@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class MinSlimeController : MonoBehaviour
 {
-    public GameObject ballPrefab;
+    [SerializeField] private GameObject ballPrefab;
     //public float speed;
 
-    PlayerController playerController;
+    private PlayerController playerController;
 
     private Vector3 minslimeScale;  //①仮の変数宣言
 

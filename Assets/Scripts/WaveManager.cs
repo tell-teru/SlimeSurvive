@@ -6,25 +6,25 @@ using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
 {
-    public float waveTimer = 0;
+    private float waveTimer = 0;
 
-    public GameObject slimeCreater;
-    public GameObject enemyCreater;
-    public GameObject MinSlimeGenerator;
+    [SerializeField] private GameObject slimeCreater;
+    [SerializeField] private GameObject enemyCreater;
+    [SerializeField] private GameObject MinSlimeGenerator;
 
     public bool nowWave = false;
 
-    public int waveCount = 0;
+    private int waveCount = 0;
 
 
-    public Text waveText;
-    public GameObject waveCanvas;
-    public GameObject warning;
+    [SerializeField] private Text waveText;
+    [SerializeField] private GameObject waveCanvas;
+    [SerializeField] private GameObject warning;
 
 
     //Camera
-    public Transform tf; //Main CameraのTransform
-    public Transform player;
+    [SerializeField] private Transform tf; //Main CameraのTransform
+    [SerializeField] private Transform player;
 
 
     // Start is called before the first frame update

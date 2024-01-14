@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class SlimeCreator : MonoBehaviour
 {
-    public GameObject[] slimes;
-    int slimeNumber;
+    [SerializeField] private GameObject[] slimes;
+    private int slimeNumber;
 
-    //public GameObject normalSlime;
+    private int createNum = 30;
 
-    int createNum = 30;
-
-    public float createTime = 0f;
+    private float createTime = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +22,7 @@ public class SlimeCreator : MonoBehaviour
     {
         createTime += Time.deltaTime;
 
-        if (createTime >= 10f)
+        if (createTime >= 7f)
         {
             Create();
             createTime = 0.0f;
