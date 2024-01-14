@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyNavigator : MonoBehaviour
+public class EnemyNavigator : BaseCharacter
 {
     public Transform target;
     NavMeshAgent agent;
@@ -21,5 +21,10 @@ public class EnemyNavigator : MonoBehaviour
     {
         // target に向かって追いかける処理
         agent.SetDestination(target.transform.position);
+    }
+
+    public override void Setup()
+    {
+        base.Setup();
     }
 }

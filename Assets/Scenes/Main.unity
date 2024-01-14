@@ -1348,7 +1348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b12b5abb23fa4c04a0136fb0f7295d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 6449011715490942000, guid: a90f30527a1194c09a4b35cf4d26a1a2, type: 3}
+  createInterval: 0
+  normalEnemy: {fileID: 6448207372116987746, guid: a90f30527a1194c09a4b35cf4d26a1a2, type: 3}
   player: {fileID: 1746986590}
 --- !u!1 &961690191
 GameObject:
@@ -1877,17 +1878,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bead1cbe9dde498e97195a6281ec794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  createInterval: 10
   slimes:
-  - {fileID: 1242614673175838793, guid: e24bb9faefaad49ff84658245238ae79, type: 3}
-  - {fileID: 1242614673175838793, guid: e24bb9faefaad49ff84658245238ae79, type: 3}
-  - {fileID: 1242614673175838793, guid: e24bb9faefaad49ff84658245238ae79, type: 3}
-  - {fileID: 1242614673175838793, guid: e24bb9faefaad49ff84658245238ae79, type: 3}
-  - {fileID: 1242614673175838793, guid: e24bb9faefaad49ff84658245238ae79, type: 3}
-  - {fileID: 6255295286094112066, guid: 4a09a5b0300e545b9bcb452d7b780b1b, type: 3}
-  - {fileID: 6255295286094112066, guid: 4a09a5b0300e545b9bcb452d7b780b1b, type: 3}
-  - {fileID: 1418430691299252477, guid: 1d25ecdc6f28b462b8f98e27af2d514c, type: 3}
-  - {fileID: 1418430691299252477, guid: 1d25ecdc6f28b462b8f98e27af2d514c, type: 3}
-  - {fileID: 3140271309381977249, guid: 521e0a46ee9a342db802bab2cac91656, type: 3}
+  - {fileID: 1219851220497009979, guid: e24bb9faefaad49ff84658245238ae79, type: 3}
+  - {fileID: 1219851220497009979, guid: e24bb9faefaad49ff84658245238ae79, type: 3}
+  - {fileID: 1219851220497009979, guid: e24bb9faefaad49ff84658245238ae79, type: 3}
+  - {fileID: 1219851220497009979, guid: e24bb9faefaad49ff84658245238ae79, type: 3}
+  - {fileID: 6746841088700042469, guid: 1d25ecdc6f28b462b8f98e27af2d514c, type: 3}
+  - {fileID: 6746841088700042469, guid: 1d25ecdc6f28b462b8f98e27af2d514c, type: 3}
+  - {fileID: 6746841088700042469, guid: 1d25ecdc6f28b462b8f98e27af2d514c, type: 3}
+  - {fileID: 5566628945153912334, guid: 4a09a5b0300e545b9bcb452d7b780b1b, type: 3}
+  - {fileID: 5566628945153912334, guid: 4a09a5b0300e545b9bcb452d7b780b1b, type: 3}
+  - {fileID: 5289978658907028106, guid: 521e0a46ee9a342db802bab2cac91656, type: 3}
   createTime: 0
 --- !u!1 &1523982043
 GameObject:

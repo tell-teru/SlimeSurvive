@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCreator : MonoBehaviour
+public class EnemyCreator :  BaseCreator
 {
-    public GameObject normalEnemy;
-
-    float norEneTimer = 0f;
-    float norEneInterval =　0.5f;
+    public BaseCharacter normalEnemy;
 
     PlayerController playerController;
     public GameObject player;
@@ -22,27 +19,14 @@ public class EnemyCreator : MonoBehaviour
         //playerpos = player.gameObject.transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Create()
     {
-        norEneTimer += Time.deltaTime;
         playerpos = player.gameObject.transform;//中心座標
-
-
         enepos = playerpos.position + CircleHorizon(50);// 半径()の円周上に出現
+        transform.position = enepos;
 
-        if (norEneTimer >= norEneInterval)
-        {
-            transform.position = enepos;
-
-            Instantiate(normalEnemy, transform.position, transform.rotation);
-
-            
-            norEneTimer = 0;
-        }
-
+        Create(normalEnemy, transform);
     }
-
 
     private Vector3 CircleHorizon(float radius)
     {
