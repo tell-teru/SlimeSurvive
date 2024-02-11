@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ButtonController : MonoBehaviour
 {
-    PlayerController pCon;
-    //public GameObject player;
 
-    bool gameOverBool;
+    [SerializeField]
+    GameObject button;
 
     // Start is called before the first frame update
     void Start()
@@ -19,49 +18,28 @@ public class ButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    public void OnClickButtonSceneMove()
+    {
         if (SceneManager.GetActiveScene().name == "Title")
         {
-            if (Input.GetMouseButton(0))
-            {
-                SceneManager.LoadScene("Rule");
-            }
+            SceneManager.LoadScene("Rule");
         }
         if (SceneManager.GetActiveScene().name == "Rule")
         {
-            if (Input.GetMouseButton(0))
-            {
-                SceneManager.LoadScene("Main");
-            }
+            SceneManager.LoadScene("Main");
         }
 
         if (SceneManager.GetActiveScene().name == "GameOver")
         {
-            if (Input.GetMouseButton(0))
-            {
-                SceneManager.LoadScene("Main");
-            }
+            SceneManager.LoadScene("Main");
         }
 
         if (SceneManager.GetActiveScene().name == "Clear")
         {
-            if (Input.GetMouseButton(0))
-            {
-                SceneManager.LoadScene("Title");
-            }
+            SceneManager.LoadScene("Title");
         }
-
-
-        //if (SceneManager.GetActiveScene().name == "Main")
-        //{
-        //    if(gameOverBool == true)
-        //    {
-        //        Debug.Log("Bool");
-        //        if (Input.GetKey(KeyCode.Space))
-        //        {
-        //            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //        }
-        //    }
-
-        //}
     }
 }
