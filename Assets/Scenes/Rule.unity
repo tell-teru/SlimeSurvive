@@ -507,7 +507,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1531668458}
   - component: {fileID: 1531668457}
-  - component: {fileID: 1531668456}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -515,24 +514,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1531668456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531668455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7580aea0fde894203825886b768fa3fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuButton: {fileID: 0}
-  menuWindow: {fileID: 0}
-  menuCanvas: {fileID: 0}
-  ruleButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  backButton: {fileID: 0}
 --- !u!114 &1531668457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,7 +526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055dddf9609394438a1f231372f10745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 34882782}
+  blinkInterval: 0.5
 --- !u!4 &1531668458
 Transform:
   m_ObjectHideFlags: 0
@@ -670,7 +652,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1604621980}
   - component: {fileID: 1604621979}
-  - component: {fileID: 1604621981}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -743,16 +724,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1604621981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604621978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 055dddf9609394438a1f231372f10745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 0}
