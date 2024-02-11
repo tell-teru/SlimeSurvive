@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -56,8 +57,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip sound3;
     private AudioSource audioSource;
 
-    [SerializeField] private GameObject addCanvas;
-    [SerializeField] private Text addText;
+    [SerializeField] private Text addSizeText;
 
 
     [SerializeField] private GameObject waterPrefab;
@@ -120,12 +120,10 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.position += new Vector3(0, 0.1f, 0);
 
             Debug.Log("+1");
-            addText.text = "+1";
-            StartCoroutine("TextSet");//コルーチンを実行
-
+            ShowAddSizeText();
+            addSizeText.text = "+1";
 
             Instantiate(waterPrefab, transform.position, Quaternion.identity);
-            //Destroy(waterPrefab.gameObject);
 
             Destroy(other.gameObject);
             audioSource.PlayOneShot(sound1);
@@ -141,12 +139,10 @@ public class PlayerController : MonoBehaviour
 
             gameObject.transform.position += new Vector3(0, 0.3f, 0);
 
-            Debug.Log("+3");
-            addText.text = "+3";
-            StartCoroutine("TextSet");//コルーチンを実行
+            ShowAddSizeText();
+            addSizeText.text = "+3";
 
             Instantiate(waterPrefab, transform.position, Quaternion.identity);
-            //Destroy(waterPrefab.gameObject);
 
             Destroy(other.gameObject);
             audioSource.PlayOneShot(sound1);
@@ -160,7 +156,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log("HP+3");
 
             Instantiate(waterPrefab, transform.position, Quaternion.identity);
-            //Destroy(waterPrefab.gameObject);
 
             Destroy(other.gameObject);
             audioSource.PlayOneShot(sound1);
@@ -178,11 +173,10 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.position += new Vector3(0, 1.0f, 0);
 
             Debug.Log("+10");
-            addText.text = "+10";
-            StartCoroutine("TextSet");//コルーチンを実行
+            ShowAddSizeText();
+            addSizeText.text = "+10";
 
             Instantiate(waterPrefab, transform.position, Quaternion.identity);
-            //Destroy(waterPrefab.gameObject);
 
             Destroy(other.gameObject);
             audioSource.PlayOneShot(sound1);
@@ -201,11 +195,10 @@ public class PlayerController : MonoBehaviour
                 gameObject.transform.position -= new Vector3(0, 0.1f, 0);
 
                 Debug.Log("-1");
-                addText.text = "-1";
-                StartCoroutine("TextSet");//コルーチンを実行
+                ShowAddSizeText();
+                addSizeText.text = "-1";
 
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-                //Destroy(explosionPrefab.gameObject);
 
                 audioSource.PlayOneShot(sound2);
             }
@@ -220,8 +213,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-
     public void GameOver()
     {
         Debug.Log("GameOver");
@@ -232,10 +223,25 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
+    void ShowAddSizeText()
+    {
+        addSizeText.transform.localScale = Vector3.zero;
+        addSizeText.transform.DOScale(1f, 0.5f)
+            .SetEase(Ease.OutBounce)
+            .OnComplete(StartCoroutine);
+    }
+
+    void StartCoroutine()
+    {
+        addSizeText.transform.DOScale(Vector3.zero, 0.5f)
+            .SetEase(Ease.OutBounce);
+        StartCoroutine("TextSet");
+    }
+
     //実行内容 1秒待ってからテキスト非表示
     IEnumerator TextSet()
     {
         yield return new WaitForSeconds(0.3f);
-        addText.text = "";
+        addSizeText.text = "";
     }
 }
