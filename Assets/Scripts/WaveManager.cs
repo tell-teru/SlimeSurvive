@@ -65,8 +65,12 @@ public class WaveManager : MonoBehaviour
         {
             //文字うきだし
             waveCanvas.gameObject.SetActive(true);
-            StartCoroutine("TextSet");//コルーチンを実行
-
+            // DOTweenを使用して透明度を変化させるアニメーションを作成
+            waveCanvas.GetComponent<Text>()
+                .DOFade(0.2f, blinkInterval)
+                .SetEase(Ease.Linear)
+                .SetLoops(2, LoopType.Yoyo)
+                .OnComplete(StartCoroutine);
 
             //クローン一気に消す
             var slimClones = GameObject.FindGameObjectsWithTag("Slime");
@@ -131,15 +135,15 @@ public class WaveManager : MonoBehaviour
         SceneManager.LoadScene("Clear");
     }
 
+    void StartCoroutine()
+    {
+        StartCoroutine("TextSet");
+    }
+
 
     //実行内容 1秒待ってからテキスト非表示
     IEnumerator TextSet()
     {
-        // DOTweenを使用して透明度を変化させるアニメーションを作成
-        waveCanvas.GetComponent<Text>().DOFade(0.2f, blinkInterval)
-            .SetEase(Ease.Linear)
-            .SetLoops(2, LoopType.Yoyo);
-
         yield return new WaitForSeconds(1.0f);
         waveCanvas.gameObject.SetActive(false);
     }
