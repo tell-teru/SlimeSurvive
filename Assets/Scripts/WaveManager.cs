@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class WaveManager : MonoBehaviour
 {
@@ -21,19 +22,20 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private GameObject waveCanvas;
     [SerializeField] private GameObject warning;
 
-
     //Camera
     [SerializeField] private Transform tf; //Main CameraのTransform
     [SerializeField] private Transform player;
 
+    private float initialAlpha = 0.2f;
+    // 点滅の間隔
+    [SerializeField]
+    private float blinkInterval = 1.5f;
 
     // Start is called before the first frame update
     void Start()
     {
         WaveSwitch();
-
-        //waveCanvas.gameObject.SetActive(false);
-
+        initialAlpha = waveCanvas.GetComponent<Text>().color.a;
 
         //Camera
         tf = tf.gameObject.GetComponent<Transform>(); //Main CameraのTransformを取得する。
@@ -61,15 +63,12 @@ public class WaveManager : MonoBehaviour
     {
         if (nowWave == true)
         {
-            //tf.position = player.position + new Vector3(0.0f, 1.75f, -2.63f); //カメラを移動。
-
             //文字うきだし
             waveCanvas.gameObject.SetActive(true);
             StartCoroutine("TextSet");//コルーチンを実行
 
 
             //クローン一気に消す
-            //GameObject slime = GameObject.FindGameObjectWithTag("Slime");//Playerタグのオジェクトを探して
             var slimClones = GameObject.FindGameObjectsWithTag("Slime");
             foreach(var clone in slimClones)
             {
@@ -94,7 +93,6 @@ public class WaveManager : MonoBehaviour
                 Destroy(clone);
             }
 
-            //warning.gameObject.SetActive(true);
             enemyCreater.gameObject.SetActive(true);
             slimeCreater.gameObject.SetActive(false);
             MinSlimeGenerator.gameObject.SetActive(true);
@@ -137,6 +135,11 @@ public class WaveManager : MonoBehaviour
     //実行内容 1秒待ってからテキスト非表示
     IEnumerator TextSet()
     {
+        // DOTweenを使用して透明度を変化させるアニメーションを作成
+        waveCanvas.GetComponent<Text>().DOFade(0.2f, blinkInterval)
+            .SetEase(Ease.Linear)
+            .SetLoops(2, LoopType.Yoyo);
+
         yield return new WaitForSeconds(1.0f);
         waveCanvas.gameObject.SetActive(false);
     }

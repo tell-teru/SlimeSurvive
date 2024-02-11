@@ -59,7 +59,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Text addSizeText;
 
-
     [SerializeField] private GameObject waterPrefab;
     [SerializeField] private GameObject explosionPrefab;
 

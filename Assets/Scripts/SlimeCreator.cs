@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class SlimeCreator : MonoBehaviour
 {
@@ -39,8 +40,10 @@ public class SlimeCreator : MonoBehaviour
 
             slimeNumber = Random.Range(0, slimes.Length);
             transform.position = new Vector3(x, 0, z);
-            Instantiate(slimes[slimeNumber], transform.position, transform.rotation);
+            GameObject newSlime = Instantiate(slimes[slimeNumber], transform.position, transform.rotation);
 
+            newSlime.transform.DOPunchScale(Vector3.one * 1.5f, 1f)
+                .SetEase(Ease.OutQuad);
         }
     }
 }
