@@ -48,6 +48,22 @@ public class ButtonController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Clear")
         {
+            SceneManager.LoadScene("Main");
+        }
+    }
+
+    public void OnClickBackButton()
+    {
+        if (SceneManager.GetActiveScene().name == "Rule")
+        {
+            SceneManager.LoadScene("Title");
+        }
+        if (SceneManager.GetActiveScene().name == "Clear")
+        {
+            SceneManager.LoadScene("Title");
+        }
+        if (SceneManager.GetActiveScene().name == "GameOver")
+        {
             SceneManager.LoadScene("Title");
         }
     }
