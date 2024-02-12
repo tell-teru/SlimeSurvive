@@ -7,6 +7,8 @@ using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    GameObject stage;
 
     private Vector3 slimeScale;  //①仮の変数宣言
     public Vector3 SlimeScale
@@ -65,6 +67,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         slimeScale = gameObject.transform.localScale; //◆現在の大きさを代入
         sizeText.text = "S I Z E : " + 5;
         armarText.text = "Armar : " + 0;
@@ -83,7 +86,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(slimeScale == v0)
+        if (slimeScale == v0)
         {
             GameOver();
         }
@@ -113,10 +116,11 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.tag == "Slime")
         {
             slimeScale += new Vector3(0.1f, 0.1f, 0.1f);//②変数keroのx座標を1増やして代入
+            gameObject.transform.localScale = slimeScale;
 
-            gameObject.transform.localScale = slimeScale; //③大きさに変数keroを代入
-
+            //gameObject.transform.DOScale(Vector3.one * 1.1f, 3f);
             gameObject.transform.position += new Vector3(0, 0.1f, 0);
+
 
             Debug.Log("+1");
             ShowAddSizeText();
@@ -124,9 +128,16 @@ public class PlayerController : MonoBehaviour
 
             Instantiate(waterPrefab, transform.position, Quaternion.identity);
 
-            Destroy(other.gameObject);
-            audioSource.PlayOneShot(sound1);
 
+            //other.transform.DOScale(Vector3.zero, 1).OnComplete(() =>
+            //{
+            //    DontDestroyOnLoad(stage);
+            //    // アニメーションが完了したらオブジェクトを破棄する
+            //    Destroy(other.gameObject);
+            //});
+            Destroy(other.gameObject);
+
+            audioSource.PlayOneShot(sound1);
         }
 
         if (other.gameObject.tag == "Armar")
