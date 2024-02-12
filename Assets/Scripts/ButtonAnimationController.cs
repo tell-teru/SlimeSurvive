@@ -25,6 +25,19 @@ public class ButtonAnimationController : MonoBehaviour
     [SerializeField]
     GameObject backButton;
 
+    [SerializeField]
+    Image rightArrow;
+
+    [SerializeField]
+    Image leftArrow;
+
+    [SerializeField]
+    Image upArrow;
+
+    [SerializeField]
+    Image downArrow;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +47,10 @@ public class ButtonAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        SetArrowAlpha(upArrow, KeyCode.UpArrow);
+        SetArrowAlpha(downArrow, KeyCode.DownArrow);
+        SetArrowAlpha(leftArrow, KeyCode.LeftArrow);
+        SetArrowAlpha(rightArrow, KeyCode.RightArrow);
     }
 
     public void OnMenuButtonClick()
@@ -84,19 +100,25 @@ public class ButtonAnimationController : MonoBehaviour
             .OnComplete(CloseWindow);
     }
 
-    private void SetMenuWindow()
+    public void SetArrowAlpha(Image arrowImage, KeyCode keyCode)
+    {
+        float alpha = Input.GetKey(keyCode) ? 1f : 0.4f;
+        arrowImage.DOFade(alpha, 0.5f);
+    }
+
+    void SetMenuWindow()
     {
         menuWindow.SetActive(false);
         menuCanvas.SetActive(false);
     }
 
-    private void SendRuleScene()
+    void SendRuleScene()
     {
         SceneManager.LoadScene("Rule");
     }
 
     // ゲーム終了
-    private void EndGame()
+    void EndGame()
     {
         #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
