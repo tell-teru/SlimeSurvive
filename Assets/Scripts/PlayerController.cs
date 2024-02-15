@@ -134,12 +134,12 @@ public class PlayerController : MonoBehaviour
             Instantiate(waterPrefab, transform.position, Quaternion.identity);
 
 
-            //other.transform.DOScale(Vector3.zero, 1).OnComplete(() =>
-            //{
-            //    DontDestroyOnLoad(stage);
-            //    // アニメーションが完了したらオブジェクトを破棄する
-            //    Destroy(other.gameObject);
-            //});
+            other.transform.DOScale(Vector3.zero, 1).OnComplete(() =>
+            {
+                DontDestroyOnLoad(stage);
+                // アニメーションが完了したらオブジェクトを破棄する
+                Destroy(other.gameObject);
+            });
             Destroy(other.gameObject);
 
             audioSource.PlayOneShot(sound1);
